@@ -1,0 +1,156 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta charset="utf-8">
+
+
+<!--Bootstrap 3-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/my_navbar.css' %}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<style>
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#contact-info {
+  display: flex;
+}
+
+.justify {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.myabout {
+  background-color: #0099cc;
+  padding-top: 25px;
+  padding-right: 25px;
+  padding-bottom: 50px; 
+  color: white
+}
+
+.myabout a {
+  color: white; 
+}
+
+
+</style>
+
+{% block myparallax %}
+replace me
+{% endblock %}
+
+</head>
+<body>
+
+<div id="mynavbar">
+  <div id="mynavbar-left">
+    <a href="#default" id="mylogo">Sai Laundry</a>
+  </div>
+  <div id="mynavbar-center">
+    <a href="/">Home</a>
+    <a href="/price">Price</a>
+    <a href="/order">Order</a>
+    <a href="/address">Address</a>
+  </div>
+  <div id="mynavbar-right">
+    <a>Login</a>
+    <a href="/customer_registration">Sign Up</a>
+  </div>
+</div>
+
+{% block content %}
+replace me
+{% endblock %}
+
+<div class="myabout container-fluid">  
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <p><b>About Us</b></p>
+        <div class="justify">
+          <p>At Sai Laundry, we are building India's first organized chain of laundry and home cleaning stores, focused on fostering the Do It Yourself culture. With technology at the heart of the brand, Sai Laundry also enables the time crunched customers to avail pick-n- drop service from the comforts of their home or office.</p>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <p><b>Contact Us</b></p>
+        <div id="contact-info">
+          <div style="width: 20px">
+            <i class="fa fa-map-marker" style="font-size:18px;color:white"></i>
+          </div>
+          <div>
+            Lalganj Khairipura, Mehedibag Road Nagpur - 440002
+          </div>  
+        </div>
+        <br>
+        <div id="contact-info">
+          <div style="width: 20px">
+            <i class="fa fa-phone" style="font-size:18px;color:white"></i>
+          </div>
+          <div>
+            +91 8446584122
+          </div>  
+        </div>
+        <br>
+        <div id="contact-info">
+          <div style="width: 20px">
+            <i class="fa fa-envelope" style="font-size:18px;color:white"></i>
+          </div>
+          <div>
+            deep@gmail.com
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+scrollFunction();
+
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("mynavbar").style.padding = "30px 10px";
+    document.getElementById("mylogo").style.fontSize = "25px";
+  } else {
+    document.getElementById("mynavbar").style.padding = "30px 10px";//"80px 10px"
+    document.getElementById("mylogo").style.fontSize = "25px";//"35px"
+  }
+}
+
+
+
+
+
+// check window width
+// var width,height;
+// window.onresize = window.onload = function() {
+//     width = this.innerWidth;
+//     height = this.innerHeight;
+//     if (width <= 500) {
+//       document.getElementById("mynavbar").classList.add = "sidenav"
+//       document.getElementById("mynavbar").id = "mySidenav";
+      
+//     } else {
+//       document.getElementById("mySidenav").class = ""
+//       document.getElementById("mySidenav").id = "mynavbar";
+//     }
+//     // document.body.innerHTML = width + 'x' + height; // For demo purposes
+// }
+
+</script>
+
+</body>
+</html>

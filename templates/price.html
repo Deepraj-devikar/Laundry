@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container-fluid" style="margin-top:100px;padding:15px 15px 500px;font-size:30px">
+  <center><p><b>Price List</b></p></center>
+  <div class="container">
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in items_info %}
+        <tr>
+          <td>{{ item.item_name }}</td>
+          <td>{{ item.piece }} Piece</td>
+          <td>{{ item.rate }} Rupees</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  </div>
+</div>
+
+{% endblock %}

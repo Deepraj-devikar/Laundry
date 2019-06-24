@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+
+{% block myparallax %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/my_parallax.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+<div class="myparallax"></div>
+
+<div class="container" style="margin-top: 10px; font-size: 22px">
+	<div class="row">
+		<div class="col-sm-12">
+			<p>
+				<b>
+					Laundry Process
+				</b>
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-3">
+			<div class="panel">
+				<div class="panel-heading">
+					<center><h2>Request</h2></center>
+				</div>
+				<div class="panel-body">
+					<center><img src="{% static 'img/request_img.png' %}" height="120px" width="80px"></center>
+					<div class="justify">
+						<p>
+							Send request to us by filling form which is on our site 
+						</p>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="panel">
+				<div class="panel-heading">
+					<center><h2>Collecting Cloths</h2></center>
+				</div>
+				<div class="panel-body">
+					<center><img src="{% static 'img/home.jpg' %}" height="120px" width="120px"></center>
+					<div class="justify">
+						<p>
+							We arrive your home for collecting your cloths
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="panel">
+				<div class="panel-heading">
+					<center><h2>Laundry Process</h2></center>
+				</div>
+				<div class="panel-body">
+					<center><img src="{% static 'img/laundry_room.jpg' %}" height="120px" width="160px"></center>
+					<div class="justify">
+						<p>
+							We do our laundry process in best ways ever
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="panel">
+				<div class="panel-heading">
+					<center><h2>Returning Cloths</h2></center>
+				</div>
+				<div class="panel-body">
+					<center><img src="{% static 'img/home.jpg' %}" height="120px" width="120px"></center>
+					<div class="justify">
+						<p>
+							We arrive your home for returning your cloths
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<p>We do our work on time</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<p>Choose us and save your time</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12 justify">
+			<p>Laundry was first done in watercourses, letting the water carry away the materials which could cause stains and smells. Laundry is still done this way in the rural regions of poor countries Once clean, the clothes were rinsed and then wrung out — twisted to remove most of the water. Then they were hung up on poles or clothes lines to air dry, or sometimes just spread out on clean grass, bushes, or trees. Finally, they were Ironed.</p>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
