@@ -5,19 +5,13 @@
 
 
 <div class="container-fluid" style="margin-top:100px;padding:15px 15px 500px;font-size:25px">
-  <center><p><b>Sign Up Form</b></p></center>
+  <center><p><b>Request Form</b></p></center>
   <div class="container" style="padding-right: 100px;padding-left: 100px">
-    <form method="POST"> {% csrf_token %}
+    <form method="POST" action="/requesting/"> {% csrf_token %}
 		{{ form|crispy }}
 		<input type="submit" name="btn" value="save">
 	</form>
 	<br>
-	{% if found_email %}
-		<p>email is already registered</p>
-	{% endif %}
-	{% if found_mobile %}
-		<p>mobile is already registered</p>
-	{% endif %}
   </div>
 </div>
 

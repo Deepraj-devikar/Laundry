@@ -2,12 +2,12 @@ from django.forms import ModelForm
 
 
 from .models import ItemCount, RequestComplition, Request
+from rateboard.models import Rates
 
 class RequestForm(ModelForm):
 	class Meta:
 		model = Request
 		fields = [
-			'customer',
 			'request_type',
 			'query'
 		]
@@ -18,12 +18,11 @@ class ItemCountForm(ModelForm):
 		fields = [
 			'item_rate',
 			'quantity',
-			'request'
 		]
 
 class RequestComplitionForm(ModelForm):
 	class Meta:
-		model = ItemCount
+		model = RequestComplition
 		fields = [
 			'suggest_time',
 		]

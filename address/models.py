@@ -11,6 +11,9 @@ class CustomerAddress(models.Model):
 	pincode 				= models.DecimalField(max_digits = 20, decimal_places = 0)
 	customer 				= models.ForeignKey(Customer, on_delete=models.CASCADE)
 
+	def __str__(self):
+		return '{}'.format(self.customer)
+
 class DeliveryBoyAddress(models.Model):
 	house_no 				= models.CharField(max_length = 20, null = True)
 	street_area_locality 	= models.TextField(max_length = 50)
@@ -19,6 +22,9 @@ class DeliveryBoyAddress(models.Model):
 	pincode 				= models.DecimalField(max_digits = 20, decimal_places = 0)
 	delivery_boy 			= models.ForeignKey(DeliveryBoy, on_delete=models.CASCADE)
 
+	def __str__(self):
+		return '{}'.format(self.delivery_boy)
+
 class LaundryAddress(models.Model):
 	house_no 				= models.CharField(max_length = 20, null = True)
 	street_area_locality 	= models.TextField(max_length = 50)
@@ -26,3 +32,5 @@ class LaundryAddress(models.Model):
 	town_village_city 		= models.CharField(max_length = 25)
 	pincode 				= models.DecimalField(max_digits = 20, decimal_places = 0)
 	
+	def __str__(self):
+		return 'Laundry Address'

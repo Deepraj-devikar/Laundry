@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<div class="container-fluid" style="margin-top:100px;padding:15px 15px 500px;font-size:25px">
+  <center><p><b>Log In Form</b></p></center>
+  <div class="container" style="padding-right: 100px;padding-left: 100px">
+    <form action="/customer_logingin/" method="POST"> {% csrf_token %}
+		<div id="div_id_email" class="form-group"> <label for="id_email" class="col-form-label  requiredField">
+                Email<span class="asteriskField">*</span> </label> <div class=""> <input type="email" name="email" maxlength="50" class="emailinput form-control" required id="id_email"> </div> </div> 
+        <div id="div_id_password" class="form-group"> <label for="id_password" class="col-form-label  requiredField">
+                Password<span class="asteriskField">*</span> </label> <div class=""> <input type="password" name="password" maxlength="20" class="textinput textInput form-control" required id="id_password"> </div> </div>
+		<input type="submit" name="btn" value="save">
+	</form>
+	<br>
+	{% if email_not_matched %}
+		<p>email is not found</p>
+	{% endif %}
+  </div>
+</div>
+
+
+
+
+
+{% endblock %} 

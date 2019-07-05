@@ -10,6 +10,7 @@
 <!--Bootstrap 3-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="{% static 'css/my_navbar.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/block_btn.css' %}" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -61,13 +62,19 @@ replace me
   <div id="mynavbar-center">
     <a href="/">Home</a>
     <a href="/price">Price</a>
-    <a href="/order">Order</a>
+    <a href="/request">Request</a>
     <a href="/address">Address</a>
   </div>
-  <div id="mynavbar-right">
-    <a>Login</a>
-    <a href="/customer_registration">Sign Up</a>
-  </div>
+  {% if is_login %}
+    <div id="mynavbar-right">
+      <a>hi {{ customer_name }}</a>
+    </div>
+  {% else %}
+    <div id="mynavbar-right">
+      <a href="/customer_login">Login</a>
+      <a href="/customer_registration">Sign Up</a>
+    </div>
+  {% endif %}
 </div>
 
 {% block content %}

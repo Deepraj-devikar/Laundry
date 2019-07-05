@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
-from .forms import CustomerRegistrationForm
+from .forms import CustomerLoginForm, CustomerRegistrationForm
 from .models import Customer
 
 # Create your views here.
@@ -18,6 +18,9 @@ def customer_registration_view(request):
 			pass
 		else:
 			form.save()
+			customer_obj = Customer.objects.get(email = form_data['email'])
+			request.session['customer_id'] = customer_obj.id 
+			request.session['is_login'] = True
 		
 	form = CustomerRegistrationForm()
 
@@ -31,4 +34,22 @@ def customer_registration_view(request):
 
 
 def customer_login_view(request):
-	pass
+	context = {
+			'email_not_matched': False
+		}
+	return render(request, "customer_login.html", context)
+
+def customer_logingin_view(request):
+	login_data = request.POST.copy()
+	login_email = login_data.get('email')
+	login_password = login_data.get('password')
+	if Customer.objects.filter(email = login_email, password = login_password).exists():
+		customer_obj = Customer.objects.get(email = login_email)
+		request.session['customer_id'] = customer_obj.id 
+		request.session['is_login'] = True
+		return redirect("/")
+	else:
+		context = {
+			'email_not_matched': True
+		}
+		return render(request, "customer_login.html", context)
